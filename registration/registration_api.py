@@ -16,7 +16,7 @@ def register_user(data: RegisterModel):
 @user_router.post('/login')
 def login_user(data: LoginModel):
     login_data = data.model_dump()
-    result = add_new_user(**login_data)
+    result = login_user_db(**login_data)
 
     return {'status': 1, 'message': result}
 

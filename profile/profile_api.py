@@ -24,7 +24,7 @@ async def all_users_info():
 #Запрос на загрузку фото профиля
 @profile_router.post('/profile-photo')
 async def upload_profile_photo(user_id: int, photo: UploadFile):
-    with open('/media/{photo.filename}', 'wb') as file:
+    with open('media/{photo.filename}', 'wb') as file:
         front_photo = await photo.read()
         file.write(front_photo)
 
